@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +12,7 @@ namespace Managers
 
         public GameState state;
         public UnityAction<GameState> onStateChanged;
+        public UnityAction OnRestartPlayer;
 
         private void Awake()
         {
@@ -27,6 +27,15 @@ namespace Managers
         private void OnStateChanged(GameState s)
         {
             state = s;
+            if (s == GameState.Fail)
+            {
+                Locator.Instance.uiManager.OnFailed();
+            }
+
+            if (s == GameState.Win)
+            {
+                Locator.Instance.uiManager.OnWin();
+            }
         }
     }
 }

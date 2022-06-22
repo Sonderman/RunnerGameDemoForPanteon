@@ -15,9 +15,14 @@ namespace Managers
             {
                 CheckInputs();
             }
+            else
+            {
+                OnHold = false;
+                XInput = 0;
+            }
         }
 
-
+        
         private void CheckInputs()
         {
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN

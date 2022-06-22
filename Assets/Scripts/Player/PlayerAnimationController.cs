@@ -31,7 +31,11 @@ namespace Player
                     break;
                 case GameManager.GameState.Fail:
                     _animator.SetBool("isFalling",true);
-                    _animator.SetBool("isFalling", false);
+                    _animator.SetBool("isRunning", false);
+                    break;
+                case GameManager.GameState.Win:
+                    _animator.SetBool("isRunning",false);
+                    _animator.SetTrigger("Victory");
                     break;
             }
         }
