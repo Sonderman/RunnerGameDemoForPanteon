@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4110626070859260395}
-  - component: {fileID: 1055033309920865870}
-  - component: {fileID: 2972600592550681220}
-  - component: {fileID: 5633462735156377866}
-  - component: {fileID: 5864065476155377104}
+  - component: {fileID: 3821801971607193356}
+  - component: {fileID: 6487981146901325026}
+  - component: {fileID: 6862037408852989792}
+  - component: {fileID: 3852133314560820402}
+  - component: {fileID: 1289089069684379551}
   m_Layer: 0
   m_Name: HorizontalObstacle
   m_TagString: OBS
@@ -35,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1055033309920865870
+--- !u!33 &3821801971607193356
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +44,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3620946934890953553}
   m_Mesh: {fileID: -8836696378809578477, guid: c3fe49ecc7110d84689e4bb30f7697fb, type: 3}
---- !u!23 &2972600592550681220
+--- !u!23 &6487981146901325026
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,21 +86,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5633462735156377866
-MeshCollider:
+--- !u!65 &6862037408852989792
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3620946934890953553}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8836696378809578477, guid: c3fe49ecc7110d84689e4bb30f7697fb, type: 3}
---- !u!114 &5864065476155377104
+  serializedVersion: 2
+  m_Size: {x: 1.42, y: 3.84, z: 1.4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &3852133314560820402
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620946934890953553}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.71000004, y: 1.92, z: 0.7}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &1289089069684379551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,6 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 100
-  moveSpeed: 0.5
+  moveSpeed: 0.4
   moveDistance: 5
   moveRight: 0

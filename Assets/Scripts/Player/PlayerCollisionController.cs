@@ -29,23 +29,19 @@ namespace Player
         {
             transform.position = _startPos;
         }
+        
 
-        private void OnCollisionEnter(Collision col)
+        private void OnTriggerEnter(Collider col)
         {
-            print("coll happen");
-            if (col.collider.CompareTag("OBS"))
+            if (col.CompareTag("OBS"))
             {
                 Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Fail);
             }
 
-            if (col.collider.CompareTag("Stick"))
+            if (col.CompareTag("Stick"))
             {
                 print("stick");
             }
-        }
-
-        private void OnTriggerEnter(Collider col)
-        {
             if (col.CompareTag("Finish"))
             {
                 Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Win);

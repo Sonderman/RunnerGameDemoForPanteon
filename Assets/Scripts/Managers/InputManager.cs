@@ -34,7 +34,8 @@ namespace Managers
             }
             else
             {
-                Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Idle);
+                if(Locator.Instance.gameManager.state!= GameManager.GameState.Idle)
+                    Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Idle);
                 OnHold = false;
                 XInput = 0;
             }

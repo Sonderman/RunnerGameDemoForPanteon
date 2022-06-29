@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6784724253329431266}
   - component: {fileID: 7604316252745667911}
   - component: {fileID: 5648360686711103885}
-  - component: {fileID: 7841115080527332872}
+  - component: {fileID: 3229506846940549794}
   m_Layer: 0
   m_Name: StaticObstacle
   m_TagString: OBS
@@ -84,17 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7841115080527332872
-MeshCollider:
+--- !u!65 &3229506846940549794
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6153041266199085144}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1478626670778548299, guid: 6eb89c3da3a93ae409bf629ea2254af6, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 3.218854, y: 2.2280626, z: 1.0439621}
+  m_Center: {x: 0, y: -0.000000059604645, z: 0}

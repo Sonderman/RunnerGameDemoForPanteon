@@ -21,7 +21,7 @@ namespace Managers
         public void OnStartButtonPressed()
         {
             startUI.SetActive(false);
-            Locator.Instance.gameManager.state = GameManager.GameState.Idle;
+            Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Idle);
         }
 
         public void OnRestartButtonPressed()
@@ -32,7 +32,7 @@ namespace Managers
             Locator.Instance.gameManager.OnRestartPlayer?.Invoke();
             Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Idle);
             var list = wall.GetComponentsInChildren<Transform>();
-            for(int i=1; i< list.Length;i++ )
+            for(var i=1; i< list.Length;i++ )
             {
                 Destroy(list[i].gameObject);
             }
@@ -51,7 +51,7 @@ namespace Managers
             Locator.Instance.cameraManager.LookAt(wall.transform);
             IEnumerator OnWinEnum()
             {
-                yield return new WaitForSeconds(30);
+                yield return new WaitForSeconds(15);
                 winUI.SetActive(true);
             }
         }

@@ -25,8 +25,8 @@ Transform:
   m_GameObject: {fileID: 3980024677540895442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.32, z: 10.77}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7673517574737417196}
   - {fileID: 5791338790076663142}
@@ -44,8 +44,9 @@ GameObject:
   - component: {fileID: 5791338790076663142}
   - component: {fileID: 7489816477705095875}
   - component: {fileID: 4617837986513042953}
-  - component: {fileID: 3848373639730076409}
   - component: {fileID: 8585582143372736904}
+  - component: {fileID: 5541233528506905413}
+  - component: {fileID: 6003785231755936155}
   m_Layer: 0
   m_Name: RotatingStick
   m_TagString: Stick
@@ -118,20 +119,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3848373639730076409
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6563195318903873500}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2457439952264339840, guid: ff3020bd90051a14197f4d067d4db302, type: 3}
 --- !u!114 &8585582143372736904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +133,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 30
   rotateAroundPos: {fileID: 7673517574737417196}
+--- !u!208 &5541233528506905413
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563195318903873500}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.266, y: 0.266, z: 2.6460001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 3.7630002}
+  m_TimeToStationary: 0.5
+--- !u!65 &6003785231755936155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563195318903873500}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5325656, y: 0.53256553, z: 5.2912464}
+  m_Center: {x: 0.000000014901161, y: 0.00000017881393, z: 3.7633142}
 --- !u!1 &7004820598371158358
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,13 +173,13 @@ GameObject:
   - component: {fileID: 7673517574737417196}
   - component: {fileID: 6760487986338454601}
   - component: {fileID: 8806476022698420355}
-  - component: {fileID: 8645622751433846807}
+  - component: {fileID: 1372250172806410691}
   m_Layer: 0
   m_Name: Rotator
   m_TagString: OBS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7673517574737417196
 Transform:
@@ -230,17 +246,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8645622751433846807
-MeshCollider:
+--- !u!65 &1372250172806410691
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7004820598371158358}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7554973115994324875, guid: 25dbcc8d848593140ad9c2618e95b0f6, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.3054378, y: 1.8227406, z: 2.3054385}
+  m_Center: {x: 0, y: -0.7905551, z: -0.0000004172325}

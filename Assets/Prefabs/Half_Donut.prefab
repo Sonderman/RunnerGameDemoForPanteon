@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 2404439884117465729}
   - component: {fileID: 3684021568970949590}
   - component: {fileID: 6152251877646359257}
-  - component: {fileID: 8189553054159753462}
   m_Layer: 0
   m_Name: Half_Donut_Sphere
-  m_TagString: OBS
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8189553054159753462
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878261374269514226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7611640373606427401, guid: 50270ea9ab3037349814ed8245a0b8b1, type: 3}
 --- !u!1 &1258687822792623768
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,13 +94,13 @@ GameObject:
   - component: {fileID: 2405053488650962816}
   - component: {fileID: 2589333577593575075}
   - component: {fileID: 4797560033731151312}
-  - component: {fileID: 2983160829037588652}
+  - component: {fileID: 7724239570609040661}
   m_Layer: 0
   m_Name: Half_Donut_Side
   m_TagString: OBS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2405053488650962816
 Transform:
@@ -182,20 +167,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2983160829037588652
-MeshCollider:
+--- !u!65 &7724239570609040661
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258687822792623768}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6835447887617772218, guid: 50270ea9ab3037349814ed8245a0b8b1, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.2205844, y: 6.8124022, z: 0.63463134}
+  m_Center: {x: 0.00000005960466, y: -2.716243, z: 0.00000031292447}
 --- !u!1 &3260109731493347824
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +194,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7136527888188676880
 Transform:
@@ -272,10 +256,9 @@ GameObject:
   - component: {fileID: 8770829861961597087}
   - component: {fileID: 1615076800977710143}
   - component: {fileID: 4479118116245882341}
-  - component: {fileID: 6716482522119081523}
   m_Layer: 0
   m_Name: Half_Donut_01
-  m_TagString: OBS
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,20 +328,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6716482522119081523
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4683582804863794872}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5805732586665943179, guid: 50270ea9ab3037349814ed8245a0b8b1, type: 3}
 --- !u!1 &5976465290574010982
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,10 +339,9 @@ GameObject:
   - component: {fileID: 8877912290909612169}
   - component: {fileID: 7132743589939228386}
   - component: {fileID: 3043283402360929627}
-  - component: {fileID: 6480256473896984316}
   m_Layer: 0
   m_Name: Half_Donut_Stick
-  m_TagString: OBS
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,20 +411,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6480256473896984316
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976465290574010982}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7388368752596093529, guid: 50270ea9ab3037349814ed8245a0b8b1, type: 3}
 --- !u!1 &9048922747508241458
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,10 +420,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3356507366004996186}
+  - component: {fileID: 2971115893467380745}
   - component: {fileID: 9127793980319321173}
+  - component: {fileID: 5698806080354316441}
   m_Layer: 0
   m_Name: MovingStick
-  m_TagString: Untagged
+  m_TagString: OBS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,6 +448,19 @@ Transform:
   m_Father: {fileID: 4155079190971588926}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2971115893467380745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048922747508241458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.387064, y: 2.4822898, z: 1.8566477}
+  m_Center: {x: 0.009625435, y: -1.0395279, z: 0.004812598}
 --- !u!114 &9127793980319321173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,3 +475,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
   moveDistance: 1.6
+--- !u!208 &5698806080354316441
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048922747508241458}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.71, y: 1.245, z: 0.92}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: -1.05, z: 0}
+  m_TimeToStationary: 0.5

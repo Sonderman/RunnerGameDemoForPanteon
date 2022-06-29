@@ -6,11 +6,11 @@ namespace Managers
     public class CameraManager : MonoBehaviour
     {
         [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
-        private Transform _defaultLookatTransform;
+        private Transform _defaultLookAtTransform;
 
         private void Start()
         {
-            _defaultLookatTransform = cinemachineVirtualCamera.LookAt;
+            _defaultLookAtTransform = cinemachineVirtualCamera.LookAt;
         }
 
         public void LookAt(Transform tr)
@@ -20,7 +20,7 @@ namespace Managers
 
         public void Reset()
         {
-            cinemachineVirtualCamera.LookAt = _defaultLookatTransform;
+            cinemachineVirtualCamera.LookAt = _defaultLookAtTransform;
         }
     }
 }
