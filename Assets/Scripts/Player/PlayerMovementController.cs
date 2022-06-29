@@ -7,6 +7,7 @@ namespace Player
         [SerializeField] private float runSpeed = 1f;
         [SerializeField] private float lerpSpeed = 5f;
         [SerializeField] private Vector2 clampValues = new Vector2(-4f, 4f);
+        //[SerializeField] private float turningSpeed=10f;
         private float _newX;
         private float _startPositionX;
 
@@ -27,7 +28,19 @@ namespace Player
             {
                 _newX = Mathf.Clamp(transform.position.x + Locator.Instance.inputManager.XInput * 2f,
                     _startPositionX + clampValues.x, _startPositionX + clampValues.y);
+                /*if (Locator.Instance.inputManager.XInput > 0)
+                {
+                    transform.rotation= Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,45f,0), turningSpeed* Time.deltaTime);
+                }
+                else
+                {
+                    transform.rotation= Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,-45f,0), turningSpeed* Time.deltaTime);
+                }*/
             }
+            /*else
+            {
+                transform.rotation= Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,0), turningSpeed* Time.deltaTime);
+            }*/
 
             //Moves Forward
             if (Locator.Instance.inputManager.OnHold)

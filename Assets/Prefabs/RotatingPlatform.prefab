@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7108271310901084030}
   - component: {fileID: 4990358173061417908}
   - component: {fileID: -5960939457620652218}
+  - component: {fileID: 8010314174427882166}
   - component: {fileID: 661342151794519902}
   m_Layer: 0
   m_Name: RotatingPlatform
@@ -96,9 +97,22 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1643726260354785405, guid: db4bbad547b50034088e5c2732796f42, type: 3}
+--- !u!65 &8010314174427882166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791898972025039457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.182672, y: 11.195982, z: 7.503292}
+  m_Center: {x: 0.042374134, y: 0.05649948, z: 0}
 --- !u!114 &661342151794519902
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Opponent : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     private Vector3 _startPosition;
+    private Rigidbody _rb;
+    [SerializeField] private float pushBackForce, pushBackRadius, upwardsModifier;
 
     private enum AnimStates
     {
@@ -27,6 +29,7 @@ public class Opponent : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.enabled = false;
         _startPosition = transform.position;
+        _rb = GetComponent<Rigidbody>();
         Locator.Instance.gameManager.onStateChanged += OnGameStateChanged;
     }
 
@@ -75,6 +78,7 @@ public class Opponent : MonoBehaviour
         transform.position = _startPosition;
         _state = AnimStates.Idle;
         _animator.SetBool("isFalling",false);
+        _rb.isKinematic = true;
         _navMeshAgent.enabled = true;
         _navMeshAgent.SetDestination(targetPosition);
     }
@@ -83,21 +87,29 @@ public class Opponent : MonoBehaviour
     {
         if (other.CompareTag("OBS"))
         {
-            print("opponent obs");
             _navMeshAgent.enabled = false;
-            _state = AnimStates.Fail;
-            _animator.SetBool("isRunning", false);
-            _animator.SetBool("isFalling",true);
-            StartCoroutine(DelayedMethodCall(1.5f,StartOver));
+            OnFail();
         }
         if (other.CompareTag("Stick"))
         {
-            print(" opp stick");
+            _navMeshAgent.enabled = false;
+            _rb.isKinematic = false;
+            _rb.AddExplosionForce(pushBackForce,transform.position + Vector3.forward,pushBackRadius,upwardsModifier,ForceMode.Impulse);
+            OnFail();
         }
         if (other.CompareTag("Finish"))
         {
             OnWin();
         }
+    }
+
+    private void OnFail()
+    {
+        _state = AnimStates.Fail;
+        _animator.SetBool("isRunning", false);
+        _animator.SetBool("isFalling",true);
+        StartCoroutine(DelayedMethodCall(1.5f,StartOver));
+        
     }
 
     private void OnWin()

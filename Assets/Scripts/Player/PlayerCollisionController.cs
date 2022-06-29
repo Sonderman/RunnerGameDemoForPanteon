@@ -8,7 +8,7 @@ namespace Player
     {
         private Vector3 _startPos;
         private Rigidbody _rb;
-        [SerializeField] private float rotationForce;
+        [SerializeField] private float pushBackForce, pushBackRadius, upwardsModifier;
 
         private void Start()
         {
@@ -19,8 +19,9 @@ namespace Player
 
         private void Update()
         {
-            if (_rb.velocity.y < -3f)
+            if (_rb.velocity.y < -3f && Locator.Instance.gameManager.state!= GameManager.GameState.Fail)
             {
+                print("aaa");
                 Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Fail);
             }
         }
@@ -28,8 +29,23 @@ namespace Player
         private void ReSpawnPlayer()
         {
             transform.position = _startPos;
+            _rb.velocity= Vector3.zero; // fixes a bug
         }
-        
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("RotatingPlatform"))
+            {
+                if (other.gameObject.GetComponent<RotatingPlatform>().rotateClockwise)
+                {
+                    transform.position+= Vector3.right*0.05f;
+                }
+                else
+                {
+                    transform.position+= Vector3.left*0.05f;
+                }
+            }
+        }
 
         private void OnTriggerEnter(Collider col)
         {
@@ -40,24 +56,12 @@ namespace Player
 
             if (col.CompareTag("Stick"))
             {
-                print("stick");
+                _rb.AddExplosionForce(pushBackForce,transform.position + Vector3.forward,pushBackRadius,upwardsModifier,ForceMode.Impulse);
+                Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Fail);
             }
             if (col.CompareTag("Finish"))
             {
                 Locator.Instance.gameManager.onStateChanged?.Invoke(GameManager.GameState.Win);
-            }
-        }
-
-        private void OnCollisionStay(Collision col)
-        {
-            
-            if (col.collider.CompareTag("RotatingPlatform"))
-            {
-                if (col.collider.GetComponent<RotatingPlatform>().rotateClockwise)
-                {
-                    _rb.AddForce(Vector3.right*rotationForce,ForceMode.Force);
-                }
-                else _rb.AddForce(Vector3.left*rotationForce,ForceMode.Force);
             }
         }
     }
