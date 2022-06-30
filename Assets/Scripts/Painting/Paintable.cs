@@ -1,3 +1,4 @@
+using System.Collections;
 using Managers;
 using UnityEngine;
 
@@ -7,12 +8,25 @@ namespace Painting
     {
         [SerializeField] public GameObject brushPrefab;
         [SerializeField] public float brushSize = 0.1f;
+        private bool _isPaintingAllowed;
 
-        void Update()
+        private void Update()
         {
             if (Locator.Instance.gameManager.state is GameManager.GameState.Win)
             {
-                PaintingModeInputs();
+                if (_isPaintingAllowed)
+                {
+                    PaintingModeInputs();
+                }
+                else
+                {
+                    StartCoroutine(AllowPainting());
+                    IEnumerator AllowPainting()
+                    {
+                        yield return new WaitForSeconds(2f);
+                        _isPaintingAllowed = true;
+                    }
+                }
             }
         }
 
